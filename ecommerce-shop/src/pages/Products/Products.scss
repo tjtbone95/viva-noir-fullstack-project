@@ -1,0 +1,195 @@
+@import '../../Variables.scss';
+
+.products {
+    display: flex;
+    flex-direction: column;
+
+    .page-index {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        color: whitesmoke;
+        letter-spacing: 1px;
+        left: 25px;
+        top: 75px;
+        gap: 24px;
+
+        @media (max-width: $breakpoint-sm) {
+            gap: 32px;
+        }
+
+        h2 {
+            font-size: 5rem;
+            text-transform: uppercase;
+            font-family: var(--header-font);
+            letter-spacing: 1px;
+            margin-bottom: -50px;
+
+            @media (max-width: $breakpoint-sm) {
+                font-size: 3rem;
+            }
+        }
+
+        ul {
+            display: flex;
+            gap: 8px;
+            font-family: var(--body-font);
+            margin: 0px;
+            padding-left: 4px;
+            text-transform: capitalize;
+
+            @media (max-width: $breakpoint-sm) {
+                font-size: 0.875rem;
+            }
+
+            li {
+                display: flex;
+                text-decoration: none;
+                list-style: none;
+            }
+        }
+    }
+
+    .banner {
+        width: 100%;
+        height: fit-content;
+
+        .catImg {
+            width: 100%;
+            height: 65vh;
+            object-fit: cover;
+            object-position: center;
+
+            @media (max-width: $breakpoint-md) {
+                height: 40vh;
+            }
+        }
+    }
+
+    .filter-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+        @media (max-width: $breakpoint-md) {
+            flex-direction: column;
+            margin-top: 32px;
+            margin-bottom: 32px;
+            gap: 50px;
+        }
+    
+        .left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 32px;
+            margin-right: 32px;
+            padding-right: 32px;
+            position: sticky;
+            height: 100%;
+            top: 50px;
+            max-width: 800px;
+
+            @media (max-width: $breakpoint-md) {
+                position: relative;
+                padding: 0px;
+                top: 0px;
+                margin-inline: 0px;
+            }
+
+            .filterItem {
+                margin-bottom: 30px;
+                border-top: 1px solid lightgray;
+            }
+
+            h2 {
+                text-transform: capitalize;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            .inputItem {
+                margin-bottom: 10px;
+                letter-spacing: 0.5px;
+
+                label {
+                    font-family: var(--body-font);
+                    margin-left: 10px;
+                    text-transform: capitalize;
+                }
+
+                .slider-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding-top: 20px;
+                    position: relative;
+                    width: 100%;
+                }
+
+                .slider {
+                    -webkit-appearance: none;
+                    width: 95%;
+                    height: 1px;
+                    border-radius: 2px;
+                    background: black;
+                    outline: none;
+                    opacity: 1;
+                    -webkit-transition: .2s;
+                    transition: opacity .2s;
+                    pointer-events: none; /* Ensures only the top slider is clickable */
+                }
+
+                .slider::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 20px; /* Ensure dimensions are consistent */
+                    height: 20px; /* Ensure dimensions are consistent */
+                    border-radius: 50%;
+                    background: white;
+                    opacity: 1;
+                    cursor: pointer;
+                    pointer-events: auto; /* Ensures the thumb is clickable */
+                    border: 1px solid black; /* Ensure the border is the same */
+                }
+
+                .slider::-moz-range-thumb {
+                    -webkit-appearance: none;
+                    appearance: none;
+                    width: 20px; /* Ensure dimensions are consistent */
+                    height: 20px; /* Ensure dimensions are consistent */
+                    border-radius: 50%;
+                    background: white;
+                    opacity: 1;
+                    cursor: pointer;
+                    pointer-events: auto; /* Ensures the thumb is clickable */
+                    border: 1px solid black; /* Ensure the border is the same */
+                }
+            }
+
+            .slider-values {
+                display: flex;
+                width: 95%;
+                flex-direction: row;
+                margin-top: 20px;
+                justify-content: space-between;
+                padding-top: 10px;
+            }
+        }
+
+        .right {
+            flex: 3;
+            margin-right: 32px;
+            max-width: 1200px;
+
+            @media (max-width: $breakpoint-md) {
+                margin-right: 0px;
+            }
+        }
+
+    }
+}

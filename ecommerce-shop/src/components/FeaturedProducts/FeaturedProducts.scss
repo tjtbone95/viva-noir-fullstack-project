@@ -1,0 +1,41 @@
+@import "../../Variables.scss";
+
+.featuredProducts {
+    margin: 50px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    .top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 32px;
+        text-align: center;
+
+        h1 {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        p {
+            color: #707070;
+            width: 100%;
+        }
+    }
+
+    .bottom {
+        width: 100%;
+        max-width: 1512px;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted min-width */
+
+        @media (max-width: $breakpoint-sm) {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted min-width */
+        }
+    }
+}
+  

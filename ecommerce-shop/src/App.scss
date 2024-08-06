@@ -1,0 +1,63 @@
+
+@font-face {
+  font-family: 'Cinzel';
+  src: local('Cinzel'), url(/public/fonts/Cinzel-VariableFont_wght.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Nordique Pro Regular';
+  src: local('Nordique Pro Regular'), url(/public/fonts/NordiquePro-Regular.otf) format('otf');
+}
+
+@font-face {
+  font-family: "Nordique Pro Bold";
+  src: local('Nordique Pro Bold'), url(/public/fonts/NordiquePro-Bold.otf) format('otf');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+
+  /* Font Family */
+  --bold-font: "Cinzel";
+  --header-font: "Nordique Pro Bold";
+  --body-font: "Nordique Pro Regular" ;
+}
+
+.app {
+
+    .link {
+      display: block;
+      position: relative;
+      font-family: var(--body-font);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-family: var(--header-font);
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+    }
+
+    a, span, p, h2, h3, h4 {
+      font-family: var(--body-font);  
+      margin: 0px;
+      padding: 0px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    
+  }

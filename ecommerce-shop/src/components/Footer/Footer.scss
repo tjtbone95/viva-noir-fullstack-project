@@ -1,0 +1,189 @@
+@import '../../Variables';
+
+.footer {
+    .wrapper {
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+        }
+
+    .top {
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+        padding: 50px 100px;
+
+        @media (max-width: $breakpoint-xl) {
+            padding: 0px;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+            gap: 0px;
+
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: justify;
+            font-size: 0.875rem;
+            width: fit-content;
+            max-width: 400px;
+
+            @media (max-width: $breakpoint-xl) {
+                text-align: left;
+                display: none;
+            }
+        }
+
+        .item:nth-child(6) {
+            display: block;
+            width: fit-content;
+        }
+
+        span {
+            color: gray;
+        }
+
+        .social-icons {
+            display: flex;
+            padding-top: 12px;
+            font-size: 24px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            color: black;
+            gap: 12px;
+            cursor: pointer;
+
+            .icon:hover {
+                color:  gray;
+            }
+
+            @media (max-width: $breakpoint-sm) {
+                justify-content: center;
+                align-items: center;
+            }
+        } 
+
+        .payment-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 24px;
+            padding-top: 12px;
+
+            @media (max-width: $breakpoint-sm) {
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .accordion {
+            display: none;
+
+            @media (max-width: $breakpoint-xl) {
+                display: block;
+                width: 100%;
+            }
+
+            .chakra-accordion__button {
+                width: 100%;
+                text-align: left;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                padding-top: 24px;
+                padding-bottom: 24px;
+                padding-inline: 0px;
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 0.2rem;
+                font-family: var(--header-font);
+
+
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+
+            .chakra-accordion__panel {
+                padding: 0px 0px 12px;
+            }
+
+            .link {
+                display: block;
+                position: relative;
+                font-family: var(--body-font);
+                font-size: 0.875rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: inherit;
+                text-decoration: none;
+                cursor: pointer;
+                color: #707070;
+
+                &:hover {
+                    color: black;
+                    text-decoration: underline;
+                    text-underline-offset: 2px;
+                }
+            }
+        }
+    }
+
+    .wrapper-right {
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        gap: 16px;
+        width: fit-content;
+
+        @media (max-width: $breakpoint-xl) {
+            flex-direction: row;
+            margin-top: 32px;
+            margin-bottom: 32px;
+            align-items: left;
+            align-content: left;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        @media (max-width: $breakpoint-md) {
+            flex-direction: column;
+            gap: 32px;
+            align-content: center;
+            align-items: center;
+            padding-inline: 32px;
+                        width: 100%;
+
+        }
+
+        .social-media, .payments {
+            width: fit-content;
+
+            h1 {
+                @media (max-width: $breakpoint-xl) {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .link:hover {
+        color: black;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+    .bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        img {
+            width: 160px;
+        }
+    }
+}

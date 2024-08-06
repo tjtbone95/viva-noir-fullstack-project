@@ -1,0 +1,93 @@
+@import "../../Variables.scss";
+
+.link {
+    display: block; /* Make the link a block-level element */
+    width: 100%; /* Ensure it occupies the full width of its parent */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.card {
+    width: 100%;
+    max-width: 350px;
+    /* Maintain aspect ratio by setting a max-width, can be adjusted as needed */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: black;
+    box-sizing: border-box; /* Ensure padding and border are included in the width and height */
+    padding: 10px;
+
+    @media (max-width: $breakpoint-md) {
+        padding: 0px;
+    }
+
+    .image {
+        width: 100%;
+        position: relative;
+        padding-top: 133.33%; /* 4:3 aspect ratio (height / width * 100) */
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mainImg {
+            z-index: 1;
+        }
+
+        .secondImg {
+            z-index: 0;
+            opacity: 0;
+        }
+
+        .hidden {
+            opacity: 0;
+        }
+
+        &:hover .mainImg {
+            opacity: 0;
+        }
+
+        &:hover .secondImg {
+            opacity: 1;
+        }
+    }
+
+    span {
+        position: absolute;
+        color: whitesmoke;
+        background-color: black;
+        padding: 3px 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        z-index: 10;
+        font-size: 0.875rem;
+    }
+
+    h2 {
+        padding-top: 10px;
+        font-family: var(--header-font);
+    }
+
+    h2, .prices {
+        font-size: 1rem;
+        text-decoration: none;
+        
+    }
+
+    .prices {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        h3:nth-child(even) {
+            color: #707070;
+            text-decoration: line-through;
+        }
+    }
+}

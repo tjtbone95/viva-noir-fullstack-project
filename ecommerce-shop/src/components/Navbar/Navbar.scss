@@ -1,0 +1,168 @@
+@import '../../Variables';
+
+.navbar {
+    height: 72px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+  
+    .wrapper {
+        margin-inline: 24px;
+        width: 100%;
+        padding: 5px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        @media (max-width: $breakpoint-md) {
+            margin-inline: 18px;
+            padding: 0px;
+        }
+  
+        .nav-logo {
+            width: 12rem;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            @media (max-width: $breakpoint-sm){
+                display: none;
+            }
+        }
+  
+        .item {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+        }
+  
+        .left,
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            @media (max-width: $breakpoint-sm) {
+                gap: 12px;
+            };
+
+            @media (max-width: $breakpoint-sm) {
+                gap: 12px;
+                margin-right: 0px;
+            };
+
+
+ 
+            .item, .icon {
+                @media (max-width: $breakpoint-lg) {
+                    display: none;
+                }
+            }
+        
+            .nav-logo { 
+                display: none;
+
+                @media (max-width: $breakpoint-sm) {
+                    display: block;
+                    width: 8rem;
+                };
+            }
+        
+            .cartIcon > .icon {
+                display: block;
+            }
+        }
+  
+        .center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+  
+            a {
+                position: relative;
+                display: block;
+            }
+        }
+  
+        .icons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: black;
+            cursor: pointer;
+            
+            .icon:hover {
+                color: grey;
+            }
+        }
+  
+        .cartIcon {
+            position: relative;
+  
+            span {
+                font-size: 0.625rem;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: black;
+                color: whitesmoke;
+                position: absolute;
+                right: -10px;
+                top: -10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &.hidden {
+                    display: none; // Hide the badge when totalQuantity is 0
+                }
+            }
+        }
+  
+        .menuIcon {
+            display: none; // Initially hide the menu icon
+  
+            @media (max-width: 1200px) {
+                display: block;
+                cursor: pointer;
+            }
+        }
+    }
+  
+    /* Link Underline */
+    a {
+        position: relative;
+        color: gray;
+        text-decoration: none;
+    }
+  
+    a:hover {
+        color: black;
+        font-weight: 900;
+    }
+  
+    a::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: black;
+        transform: scaleX(0);
+        transition: transform 0.2s ease;
+    }
+  
+    a:hover::before {
+        transform: scaleX(1);
+    }
+  
+    .center > a::before {
+        width: 0%;
+    }
+}

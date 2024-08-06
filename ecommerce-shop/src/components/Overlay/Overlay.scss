@@ -1,0 +1,24 @@
+@import '../../Variables';
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); // Initially transparent
+    z-index: 998; // Ensure it's below the cart but above other content
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; // Prevents clicks when not visible
+    transition: opacity 0.5s ease-in-out; // Apply transition effect to both states
+  
+    &.active {
+      opacity: 0.6; // Set desired opacity for active state
+      background-color: rgba(0, 0, 0, 0.6) ;
+      visibility: visible;
+      pointer-events: auto; // Re-enable clicks when visible
+      transition: opacity 0.5s ease-in-out; // Apply transition effect to both states
+    }
+  }
+  

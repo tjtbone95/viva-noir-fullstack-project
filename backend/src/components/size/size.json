@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_size_sizes",
+  "info": {
+    "displayName": "size",
+    "icon": "shirt"
+  },
+  "options": {},
+  "attributes": {
+    "small": {
+      "displayName": "small",
+      "type": "component",
+      "repeatable": false,
+      "component": "size.small"
+    }
+  }
+}
